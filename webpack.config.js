@@ -8,6 +8,9 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: '[name].js',
+		library: 'postal-codes-js',
+		libraryTarget: 'umd',
+		umdNamedDefine: true,
 	},
 	module: {
 		rules: [
