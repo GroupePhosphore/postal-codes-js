@@ -11,62 +11,65 @@ if (isNode) {
 	getFormat = require('./formats-web');
 }
 
-module.exports.validate = function(countryCode, postalCode) {
-	if (!countryCode) {
-		return 'Missing country code.';
-	}
+module.exports.validate = function (countryCode, postalCode) {
 
-	if (!postalCode) {
-		return 'Missing postal code.';
-	}
+    if ( !countryCode ) {
+        return "Missing country code.";
+    }
 
-	let countryData = undefined;
-	let preparedCountryCode = countryCode.trim().toUpperCase();
+    if ( !postalCode ) {
+        return 'Missing postal code.';
+    }
 
-	// Is it alpha2 ?
-	if (preparedCountryCode.length == 2) {
-		countryData = byAlpha2[preparedCountryCode];
-	}
+    let countryData = undefined;
+    let preparedCountryCode = countryCode.trim().toUpperCase();
 
-	// Is it alpha3 ?
-	if (preparedCountryCode.length == 3) {
-		countryData = byAlpha3[preparedCountryCode];
-	}
+    // Is it alpha2 ?
+    if ( preparedCountryCode.length == 2 ) {
+        countryData = byAlpha2[preparedCountryCode];
+    }
 
-	if (!countryData) {
-		return 'Unknown alpha2/alpha3 country code: ' + preparedCountryCode;
-	}
+    // Is it alpha3 ?
+    if ( preparedCountryCode.length == 3 ) {
+        countryData = byAlpha3[preparedCountryCode];
+    }
 
-	let format = getFormat(countryData.postalCodeFormat);
-	if (!format) {
-		return 'Failed to load postal code format "' + countryData.postalCodeFormat + '".';
-	}
+    if ( !countryData ) {
+        return 'Unknown alpha2/alpha3 country code: ' + preparedCountryCode;
+    }
 
-	let preparedPostalCode = postalCode
-		.toString()
-		.trim()
-		.slice(0);
-	for (let i = 0; i < format.RedundantCharacters.length; i++) {
-		preparedPostalCode = preparedPostalCode.replace(new RegExp(format.RedundantCharacters[i], 'g'), '');
-	}
+    // If the country/region does not use postal codes
+    if ( !countryData.postalCodeFormat ) {
+        return true;
+    }
 
-	let expression = format.ValidationRegex;
-	if (expression instanceof Array) {
-		expression = '^' + expression.join('|') + '$';
-	}
+    let format = getFormat(countryData.postalCodeFormat);
+    if ( !format ) {
+        return 'Failed to load postal code format "' + countryData.postalCodeFormat + '".';
+    }
 
-	const regexp = new RegExp(expression, 'i');
-	let result = regexp.exec(preparedPostalCode);
+    let preparedPostalCode = postalCode.toString().trim().slice(0);
+    for (let i = 0; i < format.RedundantCharacters.length; i++) {
+        preparedPostalCode = preparedPostalCode.replace(new RegExp(format.RedundantCharacters[i], 'g'), '');
+    }
 
-	if (!result) {
-		// Invalid postal code
-		return 'Postal code ' + preparedPostalCode + ' is not valid for country ' + preparedCountryCode;
-	}
+    let expression = format.ValidationRegex;
+    if ( expression instanceof Array ) {
+        expression = '^' + expression.join('|') + '$';
+    }
 
-	if (result[0].toLowerCase() != preparedPostalCode.toLowerCase()) {
-		// Found "sub" match
-		return 'Postal code ' + preparedPostalCode + ' is not valid for country ' + preparedCountryCode;
-	}
+    const regexp = new RegExp(expression, 'i');
+    let result = regexp.exec(preparedPostalCode);
 
-	return true;
+    if ( !result ) {
+        // Invalid postal code
+        return "Postal code " + preparedPostalCode + " is not valid for country " + preparedCountryCode;
+    }
+
+    if ( result[0].toLowerCase() != preparedPostalCode.toLowerCase() ) {
+        // Found "sub" match
+        return "Postal code " + preparedPostalCode + " is not valid for country " + preparedCountryCode;
+    }
+
+    return true;
 };
