@@ -408,7 +408,7 @@
     },
     "DK": {
         "countryName": "Denmark",
-        "postalCodeFormat": "4Digits.json",
+        "postalCodeFormat": "DK.json",
         "alpha2": "DK",
         "alpha3": "DNK",
         "numeric3": "208"
@@ -615,7 +615,7 @@
     },
     "GG": {
         "countryName": "Guernsey",
-        "postalCodeFormat": "GB.json",
+        "postalCodeFormat": "GG.json",
         "alpha2": "GG",
         "alpha3": "GGY",
         "numeric3": "831"
@@ -689,6 +689,13 @@
         "alpha3": "IND",
         "numeric3": "356"
     },
+    "IC": {
+        "countryName": "Canary Islands",
+        "postalCodeFormat": "5Digits.json",
+        "alpha2": "IC",
+        "alpha3": "",
+        "numeric3": ""
+    },
     "ID": {
         "countryName": "Indonesia",
         "postalCodeFormat": "5Digits.json",
@@ -712,13 +719,14 @@
     },
     "IE": {
         "countryName": "Ireland",
+        "postalCodeFormat": "IE.json",
         "alpha2": "IE",
         "alpha3": "IRL",
         "numeric3": "372"
     },
     "IM": {
         "countryName": "Isle of Man",
-        "postalCodeFormat": "GB.json",
+        "postalCodeFormat": "IM.json",
         "alpha2": "IM",
         "alpha3": "IMN",
         "numeric3": "833"
@@ -753,7 +761,7 @@
     },
     "JE": {
         "countryName": "Jersey",
-        "postalCodeFormat": "GB.json",
+        "postalCodeFormat": "JE.json",
         "alpha2": "JE",
         "alpha3": "JEY",
         "numeric3": "832"
@@ -870,7 +878,7 @@
     },
     "LU": {
         "countryName": "Luxembourg",
-        "postalCodeFormat": "4Digits.json",
+        "postalCodeFormat": "LU.json",
         "alpha2": "LU",
         "alpha3": "LUX",
         "numeric3": "442"
@@ -979,7 +987,7 @@
     },
     "MC": {
         "countryName": "Monaco",
-        "postalCodeFormat": "5Digits.json",
+        "postalCodeFormat": "MC.json",
         "alpha2": "MC",
         "alpha3": "MCO",
         "numeric3": "492"
@@ -1151,7 +1159,7 @@
     },
     "PA": {
         "countryName": "Panama",
-        "postalCodeFormat": "6Digits.json",
+        "postalCodeFormat": "4Digits.json",
         "alpha2": "PA",
         "alpha3": "PAN",
         "numeric3": "591"
@@ -1463,7 +1471,7 @@
     },
     "TW": {
         "countryName": "Taiwan, Republic of China",
-        "postalCodeFormat": "5Digits.json",
+        "postalCodeFormat": "TW.json",
         "alpha2": "TW",
         "alpha3": "TWN",
         "numeric3": "158"

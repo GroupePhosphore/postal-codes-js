@@ -4,9 +4,9 @@ const byAlpha2 = require('./generated/postal-codes-alpha2.json');
 const byAlpha3 = require('./generated/postal-codes-alpha3.json');
 const isNode = require('detect-node');
 
-let getFormat = null;
-if (isNode) {
-	getFormat = require('./formats-node');
+var getFormat = null;
+if ( isNode ) {
+    getFormat = require("./formats-node");
 } else {
 	getFormat = require('./formats-web');
 }
@@ -21,8 +21,8 @@ module.exports.validate = function (countryCode, postalCode) {
         return 'Missing postal code.';
     }
 
-    let countryData = undefined;
-    let preparedCountryCode = countryCode.trim().toUpperCase();
+    var countryData = undefined;
+    var preparedCountryCode = countryCode.trim().toUpperCase();
 
     // Is it alpha2 ?
     if ( preparedCountryCode.length == 2 ) {
@@ -43,23 +43,23 @@ module.exports.validate = function (countryCode, postalCode) {
         return true;
     }
 
-    let format = getFormat(countryData.postalCodeFormat);
+    var format = getFormat(countryData.postalCodeFormat);
     if ( !format ) {
         return 'Failed to load postal code format "' + countryData.postalCodeFormat + '".';
     }
 
-    let preparedPostalCode = postalCode.toString().trim().slice(0);
-    for (let i = 0; i < format.RedundantCharacters.length; i++) {
+    var preparedPostalCode = postalCode.toString().trim().slice(0);
+    for (var i = 0; i < format.RedundantCharacters.length; i++) {
         preparedPostalCode = preparedPostalCode.replace(new RegExp(format.RedundantCharacters[i], 'g'), '');
     }
 
-    let expression = format.ValidationRegex;
+    var expression = format.ValidationRegex;
     if ( expression instanceof Array ) {
         expression = '^' + expression.join('|') + '$';
     }
 
     const regexp = new RegExp(expression, 'i');
-    let result = regexp.exec(preparedPostalCode);
+    var result = regexp.exec(preparedPostalCode);
 
     if ( !result ) {
         // Invalid postal code

@@ -21,7 +21,6 @@
     "AU",
     "BD",
     "BE",
-    "BE",
     "BG",
     "BO",
     "CC",
@@ -29,8 +28,6 @@
     "CV",
     "CX",
     "CY",
-    "CY",
-    "DK",
     "ET",
     "GE",
     "GL",
@@ -40,14 +37,13 @@
     "HU",
     "LI",
     "LR",
-    "LU",
     "MK",
     "MZ",
     "NE",
     "NF",
     "NO",
-    "NO",
     "NZ",
+    "PA",
     "PH",
     "PY",
     "SI",
@@ -74,7 +70,7 @@
     "GR",
     "GT",
     "HR",
-    "HR",
+    "IC",
     "ID",
     "IQ",
     "IT",
@@ -87,7 +83,6 @@
     "LK",
     "LY",
     "MA",
-    "MC",
     "ME",
     "MM",
     "MN",
@@ -109,7 +104,6 @@
     "TD",
     "TH",
     "TR",
-    "TW",
     "TZ",
     "UA",
     "UY",
@@ -126,7 +120,6 @@
     "KG",
     "KZ",
     "NG",
-    "PA",
     "RO",
     "SG",
     "TJ",
@@ -176,17 +169,20 @@
   "CA.json": [
     "CA"
   ],
+  "DK.json": [
+    "DK"
+  ],
   "FK.json": [
     "FK"
   ],
   "GB.json": [
-    "GB",
-    "GG",
-    "IM",
-    "JE"
+    "GB"
   ],
   "GF.json": [
     "GF"
+  ],
+  "GG.json": [
+    "GG"
   ],
   "GI.json": [
     "GI"
@@ -200,8 +196,17 @@
   "HN.json": [
     "HN"
   ],
+  "IE.json": [
+    "IE"
+  ],
+  "IM.json": [
+    "IM"
+  ],
   "IO.json": [
     "IO"
+  ],
+  "JE.json": [
+    "JE"
   ],
   "KY.json": [
     "KY"
@@ -215,8 +220,14 @@
   "LT.json": [
     "LT"
   ],
+  "LU.json": [
+    "LU"
+  ],
   "LV.json": [
     "LV"
+  ],
+  "MC.json": [
+    "MC"
   ],
   "MD.json": [
     "MD"
@@ -271,6 +282,9 @@
   ],
   "TC.json": [
     "TC"
+  ],
+  "TW.json": [
+    "TW"
   ],
   "US.json": [
     "FM",
