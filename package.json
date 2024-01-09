@@ -22,8 +22,12 @@
 	},
 	"homepage": "https://github.com/Cimpress-MCP/postal-codes-js#readme",
 	"dependencies": {
+		"@babel/core": "^7.0.0-beta.44",
+		"cross-env": "^5.1.4",
 		"detect-node": "^2.0.3",
-		"path": "^0.12.7"
+		"json-loader": "^0.5.7",
+		"path": "^0.12.7",
+		"webpack": "^4.5.0"
 	},
 	"devDependencies": {
 		"@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.40",
