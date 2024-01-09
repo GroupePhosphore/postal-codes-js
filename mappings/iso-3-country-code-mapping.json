@@ -1233,5 +1233,11 @@
     "iso2CountryCode": "ZW",
     "countryName": "Zimbabwe",
     "isoNumericCountryCode": "716"
+  },
+  "CUW":{
+    "iso2CountryCode": "CW",
+    "countryName": "Curaçao",
+    "isoNumericCountryCode": "531"
+
   }
 }

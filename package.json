@@ -2,7 +2,7 @@
 	"name": "postal-codes-js",
 	"version": "2.5.2",
 	"description": "Postal Codes",
-	"main": "dist/postal-codes.js",
+	"main": "postal-codes.js",
 	"scripts": {
 		"coverage": "istanbul cover _mocha -- -R spec",
 		"test": "mocha test",

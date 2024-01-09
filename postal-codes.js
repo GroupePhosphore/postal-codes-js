@@ -17,10 +17,6 @@ module.exports.validate = function (countryCode, postalCode) {
         return "Missing country code.";
     }
 
-    if ( !postalCode ) {
-        return 'Missing postal code.';
-    }
-
     var countryData = undefined;
     var preparedCountryCode = countryCode.trim().toUpperCase();
 
@@ -41,6 +37,11 @@ module.exports.validate = function (countryCode, postalCode) {
     // If the country/region does not use postal codes
     if ( !countryData.postalCodeFormat ) {
         return true;
+    }
+
+    // Check after checking for postal code usage to ensure undefined, null and '' are accepted
+    if ( !postalCode ) {
+        return 'Missing postal code.';
     }
 
     var format = getFormat(countryData.postalCodeFormat);

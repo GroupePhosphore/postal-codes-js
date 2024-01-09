@@ -2932,7 +2932,6 @@ module.exports = {
 	},
 	"GN": {
 		"countryName": "Guinea",
-		"postalCodeFormat": "3Digits.json",
 		"alpha2": "GN",
 		"alpha3": "GIN",
 		"numeric3": "324"

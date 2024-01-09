@@ -622,7 +622,6 @@
     },
     "GIN": {
         "countryName": "Guinea",
-        "postalCodeFormat": "3Digits.json",
         "alpha2": "GN",
         "alpha3": "GIN",
         "numeric3": "324"
@@ -1666,5 +1665,11 @@
         "alpha2": "ZW",
         "alpha3": "ZWE",
         "numeric3": "716"
+    },
+    "CUW":{
+        "countryName": "Curaçao",
+        "alpha2": "CW",
+        "alpha3": "CUW",
+        "numeric3": "531"
     }
 }

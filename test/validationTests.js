@@ -46,14 +46,45 @@ describe('Postal codes border cases: ', function () {
         {
             countryCode: 'us',
             postalCode: null,
-            description: 'should return error when postal code is null',
+            description: 'should return error when postal code is null and country uses postal code',
+            expectedResult: 'Missing postal code.'
+        },
+        {
+            countryCode: 'us',
+            postalCode: '',
+            description: 'should return error when postal code is empty and country uses postal code',
             expectedResult: 'Missing postal code.'
         },
         {
             countryCode: 'gb',
             postalCode: undefined,
-            description: 'should return error when postal code is undefined',
+            description: 'should return error when postal code is undefined and country uses postal code',
             expectedResult: 'Missing postal code.'
+        },
+        ,
+        {
+            countryCode: 'gn',
+            postalCode: null,
+            description: 'should NOT return error when postal code is null and country does not uses postal code',
+            expectedResult: true
+        },
+        {
+            countryCode: 'gn',
+            postalCode: undefined,
+            description: 'should NOT return error when postal code is undefined and country does not use postal code',
+            expectedResult: true
+        },
+        {
+            countryCode: 'gn',
+            postalCode: '',
+            description: 'should NOT return error when postal code is empty and country does not use postal code',
+            expectedResult: true
+        },
+        {
+            countryCode: 'gn',
+            postalCode: '12',
+            description: 'should NOT return error when postal code is filled and country does not use postal code',
+            expectedResult: true
         },
         {
             countryCode: 'chf',
@@ -88,7 +119,7 @@ describe('Postal codes border cases: ', function () {
         {
             countryCode: 'HK',
             postalCode: 'Hong Kong',
-            description: 'should return true all the time because it does not use postal codes',
+            description: 'HK should return true all the time because it does not use postal codes',
             expectedResult: true
         }
     ];
