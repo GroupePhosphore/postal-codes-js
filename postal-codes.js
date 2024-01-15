@@ -35,7 +35,7 @@ module.exports.validate = function (countryCode, postalCode) {
     }
 
     // If the country/region does not use postal codes
-    if ( !countryData.postalCodeFormat ) {
+    if (!countryData.postalCodeFormat && (undefined === postalCode || null === postalCode || postalCode.length === 0)) {
         return true;
     }
 
