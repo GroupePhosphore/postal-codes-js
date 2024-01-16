@@ -5,6 +5,15 @@
 # postal-codes.js
 Provide javascript postal code validation for [all  countries](https://en.wikipedia.org/wiki/List_of_postal_codes).
 
+### Why this fork
+
+This fork was initiated to correct behavioral changes from the source repository which lead to breaks in our app in early versions.
+
+#### How to contribute
+
+**The `master` branch should not change anymore**. This is because the package is referenced without any version in various `package.json` files accross the ecosystem.
+
+Instead, create a **new branch** for every **new version** with a **new tag** corresponding to the new version. This will allow to reference the package version for new `package.json` files or where it is possible to do so.
 
 ### Validation rules
 1. Characters " " (space) and "-" (dash) are removed from the passed string
